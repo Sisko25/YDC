@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YourDataVoice - Decentralized Social Data Sovereignty Platform</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-size: 1.5em;
+      margin: 0 10px;
+    }
+    nav {
+      margin: 10px;
+    }
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    nav ul li {
+      margin: 0 10px;
+    }
+    nav ul li button {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1em;
+      cursor: pointer;
+      padding: 5px 10px;
+      transition: background-color 0.2s;
+    }
+    nav ul li button:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+    }
+    main {
+      padding: 20px;
+    }
+    .section {
+      margin-bottom: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    .feed-item,
+    .wallet-item {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+    .feed-item:last-child,
+    .wallet-item:last-child {
+      border-bottom: none;
+    }
+    .wallet-balance {
+      font-weight: bold;
+    }
+    footer {
+      background-color: #4CAF50;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+    @media (max-width: 600px) {
+      header,
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav ul {
+        width: 100%;
+      }
+      nav ul li {
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>YourDataVoice</h1>
+    <nav>
+      <ul>
+        <li><button onclick="showHome()">Home</button></li>
+        <li><button onclick="showFeed()">Feed</button></li>
+        <li><button onclick="showWallet()">Wallet</button></li>
+        <li><button onclick="showTransparency()">Transparency</button></li>
+        <li><button onclick="showMonetization()">Monetization</button></li>
+        <li><button onclick="showCuration()">Curation</button></li>
+        <li><button onclick="showInteroperability()">Interoperability</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <div class="section">
+      <h2>Welcome to YourDataVoice</h2>
+      <p>
+        Empowering you with data ownership and algorithmic transparency. Control,
+        monetize, and audit your social media interactions fairly and transparently.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 YourDataVoice. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Home Section
+    function showHome() {
+      document.getElementById("content").innerHTML = `
+        <div class="section">
+          <h2>Welcome to YourDataVoice</h2>
+          <p>
+            Empowering you with data ownership and algorithmic transparency. Control,
+            monetize, and audit your social media interactions fairly and transparently.
+          </p>
+          <p>Navigate using the menu above to explore various features.</p>
+        </div>
+      `;
+    }
+
+    // Feed Section: A transparent and community-driven content feed.
+    function showFeed() {
+      const feedItems = [
+        {
+          id: 1,
+          content: "Decentralization for a fair future! #DataSovereignty",
+          timestamp: "2025-02-05 10:00"
+        },
+        {
+          id: 2,
+          content: "Transparency in algorithms leads to trust in communities.",
+          timestamp: "2025-02-05 11:30"
+        },
+        {
+          id: 3,
+          content: "Users control their data, not corporations. #YourDataVoice",
+          timestamp: "2025-02-05 12:15"
+        }
+      ];
+      let html = `
+        <div class="section">
+          <h2>Your Feed</h2>
+          <p>Stream of posts curated transparently:</p>
+      `;
+      feedItems.forEach(item => {
+        html += `
+          <div class="feed-item">
+            <p>${item.content}</p>
+            <small>${item.timestamp}</small>
+          </div>
+        `;
+      });
+      html += `</div>`;
+      document.getElementById("content").innerHTML = html;
+    }
+
+    // Wallet Section: Simulated decentralized data wallet for managing your social data.
+    function showWallet() {
+      // Dummy wallet data
+      const wallet = {
+        balance: 150,
+        transactions: [
+          {
+            id: 1,
+            type: "Like",
+            reward: 5,
+            date: "2025-02-04",
+            description: "Reward for engaging with content"
+          },
+          {
+            id: 2,
+            type: "Share",
+            reward: 10,
+            date: "2025-02-03",
+            description: "Reward for sharing an insightful post"
+          },
+          {
+            id: 3,
+            type: "Comment",
+            reward: 3,
+            date: "2025-02-02",
+            description: "Reward for adding a valuable comment"
+          }
+        ]
+      };
+      let html = `
+        <div class="section">
+          <h2>Your Data Wallet</h2>
+          <p>
+            Current Balance: <span class="wallet-balance">${wallet.balance} Tokens</span>
+          </p>
+          <h3>Recent Transactions:</h3>
+      `;
+      wallet.transactions.forEach(tx => {
+        html += `
+          <div class="wallet-item">
+            <p><strong>${tx.type}</strong> - ${tx.description}</p>
+            <p>Reward: ${tx.reward} Tokens on ${tx.date}</p>
+          </div>
+        `;
+      });
+      html += `</div>`;
+      document.getElementById("content").innerHTML = html;
+    }
+
+    // Transparency Section: Showcasing our open and auditable algorithms.
+    function showTransparency() {
+      const html = `
+        <div class="section">
+          <h2>Algorithm Transparency</h2>
+          <p>
+            Our content ranking algorithms are open-source and subject to community
+            audits. Here’s how it works:
+          </p>
+          <ul>
+            <li><strong>Open Algorithm:</strong> All code related to content curation is fully visible and auditable.</li>
+            <li><strong>Audit Logs:</strong> Each action on the platform is recorded, ensuring community oversight.</li>
+            <li><strong>Alternative Feeds:</strong> Users can opt for feeds that prioritize well-being over pure engagement.</li>
+          </ul>
+          <p>
+            Feel free to review our code and audit logs on our public repository.
+          </p>
+        </div>
+      `;
+      document.getElementById("content").innerHTML = html;
+    }
+
+    // Monetization Section: Enabling users to monetize engagements directly.
+    function showMonetization() {
+      const html = `
+        <div class="section">
+          <h2>Monetization on Your Terms</h2>
+          <p>Earn tokens directly from your engagement:</p>
+          <ul>
+            <li>
+              <strong>Direct Ad Revenue:</strong> Advertisers pay you for genuine engagement.
+            </li>
+            <li>
+              <strong>Revenue Sharing:</strong> Share ad revenues based on your interactions.
+            </li>
+            <li>
+              <strong>Data Control:</strong> You decide when, what, and with whom to share your data.
+            </li>
+          </ul>
+          <p>Start earning by engaging authentically on our platform.</p>
+        </div>
+      `;
+      document.getElementById("content").innerHTML = html;
+    }
+
+    // Curation Section: Emphasizing ethical, community-driven content moderation.
+    function showCuration() {
+      const html = `
+        <div class="section">
+          <h2>Ethical Content Curation</h2>
+          <p>
+            Our community drives content moderation through transparent and democratic processes. Here’s what we believe:
+          </p>
+          <ul>
+            <li>
+              <strong>Community Moderation:</strong> Decisions are made collectively to maintain fairness.
+            </li>
+            <li>
+              <strong>No Centralized Control:</strong> Moderation policies are created and updated by the community.
+            </li>
+            <li>
+              <strong>Bias Mitigation:</strong> Democratic oversight minimizes biased content curation.
+            </li>
+          </ul>
+          <p>
+            Participate in the process and help shape our content landscape for a better tomorrow.
+          </p>
+        </div>
+      `;
+      document.getElementById("content").innerHTML = html;
+    }
+
+    // Interoperability Section: Bridging decentralized data practices with existing platforms.
+    function showInteroperability() {
+      const html = `
+        <div class="section">
+          <h2>Interoperability with Existing Platforms</h2>
+          <p>
+            We connect seamlessly with popular social media networks:
+          </p>
+          <ul>
+            <li>
+              <strong>Data Aggregator:</strong> Integrate and manage your social interactions across platforms.
+            </li>
+            <li>
+              <strong>Transparent Data Practices:</strong> Opt into full data audit and mediation processes.
+            </li>
+            <li>
+              <strong>Unified Control:</strong> Your data wallet bridges the gap between decentralized and centralized services.
+            </li>
+          </ul>
+          <p>
+            Enhance your online experience while retaining complete control over your social data.
+          </p>
+        </div>
+      `;
+      document.getElementById("content").innerHTML = html;
+    }
+  </script>
+
+
+</body></html>
